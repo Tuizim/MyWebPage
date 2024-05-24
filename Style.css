@@ -1,23 +1,46 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:700|Inter:400');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*,html{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
 :root {
-    --bg-main-colour: #040316;
-    --font-main-colour: #DDDBFF;
-    --primary-colour: #7527CE;
-    --secundary-colour: #DDDBFF;
-    --third-colour: #2f2e45;
-    --fourth-colour: #1a0a3b;
-    font-family: 'Inter';
-    font-size: 16px;
+    --bg-main-color: #040316;
+    --font-main-color: #DDDBFF;
+    --primary-color: #7527CE;
+    --secundary-color: #DDDBFF;
+    --third-color: #2f2e45;
+    --fourth-color: #1a0a3b;
+    --font-main:'Inter',sans-serif;
+    --font-secondar:'Inter';
+    font-size: 14px;
     margin: 0;
     padding: 0;
 
 }
+button {
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--font-main-color);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 5em;
+    height: 1.6em;
+    font-size: 1em;
+    border-radius: 0.8rem;
+    transition: 0.6s;
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: 0px 26px 71px -22px  var(--primary-color);
+    transform:translatey(-0.25em);
+}
 
 body {
-    background-color: var(--bg-main-colour);
-    font-weight: 400;
-    color: var(--font-main-colour);
+    background-color: var(--bg-main-color);
+    color: var(--font-main-color);
+    font-family: var(--font-main);
 }
 
 h1,
@@ -27,17 +50,99 @@ h4,
 h5 {
     font-weight: 700;
 }
-html {
-    font-size: 100%;
-}
+
 .header {
-    display: flex;
+    top:0;
+    width: 100%;
+    background-color: var(--bg-main-color);
+    position: fixed;
+    display: grid;
+    grid-template:'campo1 campo2 scMidia';
     height: 3em;
-    border-bottom: 0.08em solid var(--third-colour);
+    border-bottom: 0.08em solid var(--third-color);
     align-items: center;
+}
+.header .socialMidias{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    grid-area: scMidia;
+    height: 3em;
+}
+.header img{
+    margin: 1em;
 }
 .content {
     display: flex;
     margin-top: 3em;
-    height: 70em;
+    height: 50em;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+/* Welcome div*/
+.welcome{
+    height: 10em;
+    display: grid;
+    grid-template:
+    'head head'
+    'text button';
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+}
+.welcome h1{
+    grid-area: head;
+    align-self: end;
+    margin: 0;
+    padding-bottom: 10px;
+}
+.welcome p{
+    grid-area: text;
+    margin-top: 1em;
+    text-align: right;
+    font-weight:200 ;
+    font-size: 2rem ;
+}
+.welcome a{
+    margin-top: 0.4em;
+    width: 5em;
+    grid-area: button;
+}
+.welcome a:active{
+    scroll-behavior: smooth;
+}
+
+.button-pg-guide{
+    font-size: 0.8em; 
+}
+/* AboutMe div*/
+.about-me{
+    position:relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40em;
+}
+.abtm-image{
+    display: flex;
+    width: 40em;
+    justify-content: right;
+    align-items: center;
+}
+.abtm-text{
+    max-width: 20em;
+    margin-left: 1em;
+    font-size: 3em;
+}
+.abtm-text p{
+    font-weight: 200;
+    font-size: 0.8em;
+}
+.about-me img{
+    width: 30rem;
+    height: 30em;
+    background-color: var(--secundary-color);
+    border-radius: 100%;
+    border: 0.2em solid var(--font-main-color);
 }
